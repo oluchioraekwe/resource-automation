@@ -35,7 +35,7 @@ resource_client = ResourceManagementClient(credential, subscription_id)
 # )
 
 list_rg = resource_client.resource_groups.list()
-
+print("List of RG ", list_rg)
 # print(
 #     f"Updated resource group {rg.name} in \
 #     the {rg.location} region with tags"
