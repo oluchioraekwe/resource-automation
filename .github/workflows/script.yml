@@ -27,4 +27,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11.4'
-      - run: python resources.py
+      - name: Install Dependencies
+        run: pip install requirements.txt
+      - name: Run python code
+        run: python resources.py
