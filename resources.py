@@ -2,11 +2,15 @@ import os
 
 from azure.identity import AzureCliCredential
 from azure.mgmt.resource import ResourceManagementClient
+from dotenv import load_dotenv
 
+load_dotenv(".env")
 credential = AzureCliCredential()
 
 
-subscription_id = os.environ["AZURE_SUBSCRIPTION_ID"]
+# subscription_id = os.environ["AZURE_SUBSCRIPTION_ID"]
+subscription_id = os.environ["SUBSCRIPTION_ID"]
+
 
 resource_client = ResourceManagementClient(credential, subscription_id)
 
