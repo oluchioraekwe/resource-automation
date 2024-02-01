@@ -1,0 +1,21 @@
+name: Azure Automation Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  automate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Azure PowerShell script
+        uses: azure/powershell@v1
+        with:
+          azPSVersion: "latest"
+          inlineScript: |
+             az account show
+          
